@@ -1,7 +1,7 @@
 ---
 
 - name: Setup basic nginx on host
-  hosts: production_servers
+  hosts: client1_servers
   vars:
     - companyName: "JustRocket UG"
   tasks:
@@ -25,7 +25,7 @@
         port: 80
 
 - name: Add shell welcome
-  hosts: production_servers
+  hosts: client1_servers
   tasks:
     - name: Init motd
       tags: init, motd
