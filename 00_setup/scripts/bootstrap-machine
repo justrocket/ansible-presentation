@@ -1,10 +1,13 @@
 #!/bin/bash
 
-read -p "IP_ADDRESS" IP_ADDRESS
-read -p -s "ROOT_PASSWORD" ROOT_PASSWORD
+read -p "IP_ADDRESS:" IP_ADDRESS
+read -p "ROOT_PASSWORD:" ROOT_PASSWORD
 
 if [[ "$PUBLIC_KEY" = "" ]]; then
-  read "PUBLIC_KEY_PATH" PUBLIC_KEY_PATH
+  read -p "PUBLIC_KEY_PATH: " PUBLIC_KEY_PATH
+  if [[ "$PUBLIC_KEY_PATH" == "" ]]; then
+    PUBLIC_KEY_PATH=$HOME/.ssh/id_rsa.pub
+  fi
   PUBLIC_KEY=$(cat $PUBLIC_KEY_PATH)
 fi
 
