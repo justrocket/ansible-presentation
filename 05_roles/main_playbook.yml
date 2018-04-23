@@ -7,7 +7,7 @@
 
 
 - name: Setup application server
-  hosts: appserver
+  hosts: applicationserver
   roles:
     - nginx
 
