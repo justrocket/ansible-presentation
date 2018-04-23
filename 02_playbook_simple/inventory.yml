@@ -1,10 +1,10 @@
 all:
   children:
-    database_servers:
+    client1_servers:
       hosts:
-        mariadb:
+        databaseserver:
           ansible_host: 192.168.123.123
           ansible_user: root
-        nginx:
+        applicationserver:
           ansible_host: 192.168.123.124
           ansible_user: root
