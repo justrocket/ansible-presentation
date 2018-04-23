@@ -1,5 +1,0 @@
-#!/bin/bash -xe
-
-ansible-playbook \
-  --inventory=inventory.yml \
-  nginx_playbook.yml

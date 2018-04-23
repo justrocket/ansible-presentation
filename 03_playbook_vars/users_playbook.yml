@@ -22,3 +22,11 @@
         # $> python -c 'import crypt; print ( crypt.crypt("the password", "$1$is7h1saltymalty$"));'
         password: "$1$is7h1sal$WzHzkm2Qs7rMdhApFu51i."
       with_items: "{{ users }}"
+
+- name: Setup hostnames
+  hosts: all
+    - name: Make all hosts see each other under NAME.justrocket
+    lineinfile:
+      dest: /etc/hosts
+      line: "{{ hostvars[item].ansible_host }} {{ hostvars[item].inventory_hostname + '.justrocket' }} {{ hostvars[item].inventory_hostname_short }}"
+      state: present

@@ -1,6 +1,6 @@
 ---
 
-- name: Add users
+- name: Setup basic nginx on host
   hosts: production_servers
   vars:
     - companyName: "JustRocket UG"
@@ -9,6 +9,8 @@
       apt:
         name: nginx
         state: present
+    - name: 'Enable nginx service'
+      service: name=nginx state=started enabled=yes
     - name: 'Copy robots.txt'
       copy:
         src: files/robots.txt
@@ -21,3 +23,12 @@
       ufw:
         rule: allow
         port: 80
+
+- name: Add shell welcome
+  hosts: production_servers
+  tasks:
+    - name: Init motd
+      tags: init, motd
+      template:
+        dest: /etc/motd
+        src: files/motd.template
