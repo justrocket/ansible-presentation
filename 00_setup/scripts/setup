@@ -5,6 +5,7 @@ echo "Install ansible"
 for PKG in "ansible openssh sshpass" ; do
   apt-get install $PKG \
   || yum install $PKG \
+  || dnf install $PKG \
   || brew install $PKG \
   || pacman -S $PKG \
   || brew install $PKG \
