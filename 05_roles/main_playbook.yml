@@ -5,7 +5,6 @@
   roles:
     - common
 
-
 - name: Setup application server
   hosts: applicationserver
   roles:
@@ -15,7 +14,6 @@
   hosts: databaseserver
   roles:
     - database
-
 
 - name: Setup awx
   hosts: awxserver

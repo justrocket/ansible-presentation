@@ -1,0 +1,6 @@
+
+1. Try out: mgmt -config managment
+
+2. Use Saltstack for pull model and faster execution
+
+3. One may use modules / playbooks / etc from galaxy. Try searching for: security audit

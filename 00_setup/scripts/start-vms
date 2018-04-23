@@ -1,0 +1,10 @@
+#!/bin/bash -xe
+
+echo " hasn't been tested, might have to be done manually"
+
+for $VM in vms/* ; do
+  (
+  cd $VM
+  vagrant up
+  )
+done

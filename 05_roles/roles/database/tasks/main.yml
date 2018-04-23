@@ -3,14 +3,11 @@
 - name: 'Install mariadb'
   tags: mariadb
   apt:
-    name: mariadb
+    name: mariadb-server
     state: present
 
-- name: 'Enable mariadb service'
-  tags: mariadb
-  service: name=mariadb state=started enabled=yes
-
 - name: Allow incoming database connection
+  tags: mariadb
   ufw:
     rule: allow
     port: 3306

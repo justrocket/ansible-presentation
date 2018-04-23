@@ -23,10 +23,6 @@
       - ufw
       - fail2ban
 
-  - name: Reset Firewall rules
-    when: thorough is defined and thorough
-    shell: "ufw disable && yes | ufw reset"
-
   - name: Turn on Firewall logging
     ufw:
       logging: on
