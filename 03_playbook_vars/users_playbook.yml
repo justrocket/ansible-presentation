@@ -1,0 +1,24 @@
+---
+
+- name: Add users
+  hosts: all
+  vars:
+    - users:
+      - alice
+      - fred
+      - john
+      - zoe
+  tasks:
+    - name: 'Add company group'
+      group:
+        name: 'acmeinc'
+    - name: 'Add users and include them in the group'
+      user:
+        name: "{{ item }}"
+        state: present
+        shell: "/bin/bash"
+        groups: "acmeinc"
+        # Generated via
+        # $> python -c 'import crypt; print ( crypt.crypt("the password", "$1$is7h1saltymalty$"));'
+        password: "$1$is7h1sal$WzHzkm2Qs7rMdhApFu51i."
+      with_items: "{{ users }}"

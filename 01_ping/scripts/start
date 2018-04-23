@@ -1,0 +1,6 @@
+#!/bin/bash -xe
+
+ansible \
+  --inventory=inventory.yml \
+  mariadb \
+  --module-name=ping

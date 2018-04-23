@@ -1,0 +1,5 @@
+#!/bin/bash -xe
+
+ansible-playbook \
+  --inventory=inventory.yml \
+  users_playbook.yml

@@ -1,0 +1,23 @@
+---
+
+- name: Add users
+  hosts: production_servers
+  vars:
+    - companyName: "JustRocket UG"
+  tasks:
+    - name: 'Install nginx'
+      apt:
+        name: nginx
+        state: present
+    - name: 'Copy robots.txt'
+      copy:
+        src: files/robots.txt
+        dest: /var/www/html/robots.txt
+    - name: 'Copy index.html template'
+      template:
+        src: files/index.html.template
+        dest: /var/www/html/index.html
+    - name: 'Allow firewal 80'
+      ufw:
+        rule: allow
+        port: 80

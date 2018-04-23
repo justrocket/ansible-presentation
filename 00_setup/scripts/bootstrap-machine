@@ -1,0 +1,17 @@
+#!/bin/bash
+
+read -p "IP_ADDRESS" IP_ADDRESS
+read -p -s "ROOT_PASSWORD" ROOT_PASSWORD
+
+if [[ "$PUBLIC_KEY" = "" ]]; then
+  read "PUBLIC_KEY_PATH" PUBLIC_KEY_PATH
+  PUBLIC_KEY=$(cat $PUBLIC_KEY_PATH)
+fi
+
+sshpass -p "$ROOT_PASSWORD" ssh -tt root@$IP_ADDRESS << EOF
+  mkdir .ssh
+  echo $PUBLIC_KEY > .ssh/authorized_keys
+  chmod 0600 .ssh/authorized_keys
+  yes | apt-get install python
+  exit
+EOF

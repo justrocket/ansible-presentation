@@ -1,0 +1,14 @@
+all:
+  hosts:
+      backup:
+        ansible_host: 192.168.123.123
+        ansible_user: root
+  children:
+    production_servers:
+      hosts:
+        mariadb:
+          ansible_host: 192.168.123.123
+          ansible_user: root
+        apache:
+          ansible_host: 192.168.123.124
+          ansible_user: root
