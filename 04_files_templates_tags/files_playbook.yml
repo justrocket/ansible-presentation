@@ -3,7 +3,7 @@
 - name: Setup basic nginx on host
   hosts: client1_servers
   vars:
-    - companyName: "JustRocket UG"
+    - companyName: "JustRocket"
   tasks:
     - name: 'Install nginx'
       apt:
