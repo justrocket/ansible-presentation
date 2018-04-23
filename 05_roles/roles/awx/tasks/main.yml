@@ -1,0 +1,30 @@
+---
+
+- name: Ensure awx directory
+  tags: awx
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0775
+  with_items:
+    - "/opt/awx"
+
+
+- name: Copy docker-compose file
+  tags: awx
+  template:
+    src: dc-awx.yml
+    dest: /opt/awx/docker-compose.yml
+
+- name: Ensure awx is up and running
+  tags: awx
+  docker_service:
+    project_src: /opt/awx
+    state: present
+
+
+- name: Allow incoming database connection
+  tags: awx
+  ufw:
+    rule: allow
+    port: "{{ awx_port }}"

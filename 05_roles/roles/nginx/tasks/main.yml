@@ -1,0 +1,26 @@
+---
+
+- name: 'Install nginx'
+  apt:
+    name: nginx
+    state: present
+- name: 'Enable nginx service'
+  service: name=nginx state=started enabled=yes
+- name: 'Copy robots.txt'
+  copy:
+    src: robots.txt
+    dest: /var/www/html/robots.txt
+- name: 'Copy index.html template'
+  template:
+    src: index.html
+    dest: /var/www/html/index.html
+- name: 'Allow firewal 80'
+  ufw:
+    rule: allow
+    port: 80
+
+- name: Init motd
+  tags: init, motd
+  template:
+    src: motd
+    dest: /etc/motd

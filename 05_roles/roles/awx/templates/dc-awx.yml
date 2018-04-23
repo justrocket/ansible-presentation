@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   postgres:
     image: "postgres:9.6"
@@ -23,7 +23,7 @@ services:
       - memcached
       - postgres
     ports:
-      - "7000:8052"
+      - "{{ awx_port }}:8052"
     hostname: awxweb
     user: root
     environment:

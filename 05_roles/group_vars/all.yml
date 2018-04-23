@@ -1,0 +1,3 @@
+companyName: "JustRocket"
+docker_ver: 17.12.0~ce-0~ubuntu
+awx_port: 8066

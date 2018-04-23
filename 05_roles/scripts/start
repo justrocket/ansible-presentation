@@ -1,0 +1,10 @@
+#!/bin/bash -xe
+
+if [[ "$1" != "" ]]; then
+  TAGS="--tags=$1"
+fi
+
+ansible-playbook \
+  --inventory=inventory.yml \
+  $TAGS \
+  main_playbook.yml

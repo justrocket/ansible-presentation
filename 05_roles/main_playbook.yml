@@ -1,0 +1,24 @@
+---
+
+- name: Init all servers
+  hosts: all
+  roles:
+    - common
+
+
+- name: Setup application server
+  hosts: appserver
+  roles:
+    - nginx
+
+- name: Setup database server
+  hosts: databaseserver
+  roles:
+    - database
+
+
+- name: Setup awx
+  hosts: awxserver
+  roles:
+    - docker
+    - awx

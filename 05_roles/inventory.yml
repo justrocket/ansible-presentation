@@ -1,0 +1,17 @@
+all:
+  hosts:
+      backup:
+        ansible_host: 192.168.123.123
+        ansible_user: root
+  children:
+    production_servers:
+      hosts:
+        databaseserver:
+          ansible_host: 192.168.123.123
+          ansible_user: root
+        appserver:
+          ansible_host: 192.168.123.124
+          ansible_user: root
+        awxserver:
+          ansible_host: 192.168.123.124
+          ansible_user: root

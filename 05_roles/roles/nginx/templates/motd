@@ -1,0 +1,35 @@
+
+                        o:
+                            :
+                            h/
+         +       :/      /oyMds+:
+        /d+:   /yNMs       :mo:
+         /    yNMMMMy       +
+             dMNmmNMM+
+            hMm:  :mMd
+           /MMd    dMm
+           oMMMNddNMMh
+           +MMMMMMMMM/   :s
+            syhdmNNMo
+
+            oo
+            N+
+           /N   s:
+           yy  /M
+           N/  yh
+          +N   m+                    s+                                :hhs                   hhs
+          hy  /N      +    /+o+:   ++Ms+  /++:+o:  /+o+/      :+oo+:   sMMo  /++/   /+o+/   +sMMd+
+          N/  yh     od  +do//+hy  /ym//  mMNNNM:omNmmNNm+  /dNNmmMNo  mMM:+dMNs: sNNmmNNh :dNMMdd
+         +m   N+     ds  yd:   :+   hy   /MMm+::oMMy: :mMN::NMm: :ydd :MMNdMNy:  hMMs//sMMo :MMm
+  h/     hy  +N     :M:   +syss/    N/   yMM+   mMM    dMM:sMMo       sMMMMMd   /MMNdddmNNo +MMs
+ .M:    /N:  yh     yh  /:    +N:  +N    NMN    mMM:  oMMh sMMo  +hh/ mMMsoMMy  :MMm/:/+o:  hMM/
+  hh+/+sh/   /ms//oyy:  sh+//+yh   om/: /MMy    /dMNdmNmy   hNNmmNNy /MMh  sMMy  omMmdmNm/  sMMmy
+  .:/// .     .:+/:       ////     .//:  //      .:/+/:.      /++:   .//    ///.  .:/+/:    .:++   {{inventory_hostname}} server
+
+          Howdy capn! Welcome to the JustRocket {{inventory_hostname}} server.
+
+          All justrocket scripts shall be in your path. Please move around carefully
+
+          Modifications shall be made via ansible plays.
+
+                    Thank you and have a great day Dave!

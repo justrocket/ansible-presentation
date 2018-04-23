@@ -1,0 +1,36 @@
+---
+
+- name: Install a file manager
+  apt:
+    package: mc
+    state: present
+- name: Install process explorer
+  apt:
+    package: htop
+    state: present
+
+- name: Install firewall and fail2ban
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ufw
+    - fail2ban
+
+- name: Reset Firewall rules
+  when: thorough is defined and thorough
+  shell: "ufw disable && yes | ufw reset"
+
+- name: Turn on Firewall logging
+  ufw:
+    logging: on
+
+- name: Deny all incoming connections
+  ufw:
+    state: enabled
+    policy: deny
+
+- name: Allow incoming ssh
+  ufw:
+    rule: allow
+    port: 22
