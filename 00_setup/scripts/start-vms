@@ -2,9 +2,9 @@
 
 echo " hasn't been tested, might have to be done manually"
 
-for $VM in vms/* ; do
+for VM in vms/* ; do
   (
   cd $VM
-  vagrant up
+  nohup vagrant up &> /dev/null &
   )
 done

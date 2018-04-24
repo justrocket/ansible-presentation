@@ -2,7 +2,7 @@
 
 echo "Install ansible"
 
-for PKG in "ansible openssh sshpass" ; do
+for PKG in "ansible openssh sshpass vagrant" ; do
   apt-get install $PKG \
   || yum install $PKG \
   || dnf install $PKG \
